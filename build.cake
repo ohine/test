@@ -16,7 +16,7 @@ Task("UpdateVersion")
     if (BuildSystem.IsLocalBuild == false) 
     {
         StartPowershellScript("Write-Output", args => {
-            args.AppendQuoted($"##vso[build.updatebuildnumber]1.2.3+4");
+            args.AppendQuoted($"##vso[build.updatebuildnumber]{version.SemVer}");
         });
     }
   });
