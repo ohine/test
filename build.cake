@@ -19,7 +19,11 @@ Task("UpdateVersion")
             args.Append($"##vso[build.updatebuildnumber]{version.FullSemVer}");
         });*/
 
-        WriteLine($"##vso[build.updatebuildnumber]{version.FullSemVer}");
+        GitVersion(new GitVersionSettings {
+            OutputType = GitVersionOutput.BuildServer
+        });
+
+        Information($"##vso[build.updatebuildnumber]{version.FullSemVer}");
     }
   });
 
