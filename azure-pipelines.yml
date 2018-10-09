@@ -7,6 +7,6 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script: ./build.ps1 -Target UpdateVersion
+- powershell: ./build.ps1 -Target UpdateVersion
   displayName: 'Run a one-line script'
 
