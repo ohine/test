@@ -23,7 +23,7 @@ Task("UpdateVersion")
             OutputType = GitVersionOutput.BuildServer
         });
 
-        Information($"##vso[build.updatebuildnumber]{version.FullSemVer}");
+        //Information($"##vso[build.updatebuildnumber]{version.FullSemVer}");
     }
   });
 
